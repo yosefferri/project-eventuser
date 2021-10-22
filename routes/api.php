@@ -16,7 +16,7 @@ Route::prefix('events')->group(function () {
 Route::post('registration', [AuthController::class, 'customRegistration']);
 Route::post('signout', [AuthController::class, 'signOut']);
 
-Route::post('auth/login', [AuthController::class, 'login']);
+Route::get('auth/login', [AuthController::class, 'login']);
 Route::group(['middleware' => ['apiJWT']], function (){
     Route::get('/users/events', [EventController::class, 'userEvents']);
 });
