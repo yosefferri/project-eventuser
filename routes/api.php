@@ -8,7 +8,7 @@ use App\Http\Controllers\EventController;
 Route::post('registration', [AuthController::class, 'customRegistration']);
 Route::post('signout', [AuthController::class, 'signOut']);
 
-Route::get('auth/login', [AuthController::class, 'login']);
+Route::post('auth/login', [AuthController::class, 'login']);
 Route::group(['middleware' => ['apiJWT']], function (){
     Route::get('/users/events', [EventController::class, 'userEvents']);
     Route::prefix('events')->group(function () {
